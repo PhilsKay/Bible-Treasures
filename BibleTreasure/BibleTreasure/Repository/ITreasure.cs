@@ -1,7 +1,9 @@
-﻿namespace BibleTreasure.Repository
+﻿using BibleTreasure.Models;
+
+namespace BibleTreasure.Repository
 {
     public interface ITreasure
     {
-        Task GetTodayTreasure();
+        Task<Treasures> GetTodayTreasure();
     }
 }

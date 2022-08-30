@@ -24,3 +24,5 @@ C:\openSource\Bible-Treasures\BibleTreasure\BibleTreasure\obj\Debug\net6.0\refin
 C:\openSource\Bible-Treasures\BibleTreasure\BibleTreasure\obj\Debug\net6.0\BibleTreasure.pdb
 C:\openSource\Bible-Treasures\BibleTreasure\BibleTreasure\obj\Debug\net6.0\BibleTreasure.genruntimeconfig.cache
 C:\openSource\Bible-Treasures\BibleTreasure\BibleTreasure\obj\Debug\net6.0\ref\BibleTreasure.dll
+C:\openSource\Bible-Treasures\BibleTreasure\BibleTreasure\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\openSource\Bible-Treasures\BibleTreasure\BibleTreasure\obj\Debug\net6.0\BibleTreasure.csproj.CopyComplete

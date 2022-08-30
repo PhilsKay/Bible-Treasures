@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using BibleTreasure.Models;
+@model Treasures
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -19,19 +21,32 @@
             </div>
         </nav>
     </header>
-    <div id="ct">
-        <div class="corner "id="left_top"></div>
-        <div class="corner" id="left_bottom"></div>
-        <div class="corner" id="right_top"></div>
-        <div class="corner" id="right_bottom"></div>
-        <span>Treasure of the Day</span>
-        <blockquote>
-          <p><i>&ldquo;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam cumque maiores neque ea nesciunt eos natus sit sint delectus vero blanditiis, quae eum nihil error quam temporibus fuga voluptas, amet ut excepturi ratione omnis quo! Ducimus provident tenetur voluptatibus earum.&rdquo; </i></p>
-        </blockquote>
-        <div>
-            <p><small>2 Timothy 4: 11</small> </p>
+    @foreach (var item in Model.Results)
+    {
+        <div id="ct">
+            <div class="corner " id="left_top"></div>
+            <div class="corner" id="left_bottom"></div>
+            <div class="corner" id="right_top"></div>
+            <div class="corner" id="right_bottom"></div>
+            <span>Treasure of the Day</span>
+            <blockquote>
+                <p><i>&ldquo;@item.Text&rdquo; </i></p>
+            </blockquote>
+            <div class="d-flex justify-content-between align-items-center">
+                <p>
+                    <small>
+                        Scriptures:
+                        @foreach (var scripture in item.Scriptures)
+                        {
+                            @scripture
+                        }
+                    </small>
+                </p>
+                <time>@DateTime.Now.DayOfWeek</time>
+            </div>
         </div>
-    </div>
+    }
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -43,7 +58,7 @@
         </div>
     </footer>
     <script src="/main.js"></script>
-    
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

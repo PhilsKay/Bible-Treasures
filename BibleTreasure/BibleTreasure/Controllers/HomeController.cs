@@ -18,8 +18,8 @@ namespace BibleTreasure.Controllers
 
         public IActionResult Index()
         {
-            treasure.GetTodayTreasure();
-            return View();
+            var result = treasure.GetTodayTreasure().Result;
+            return View(result);
         }
 
 

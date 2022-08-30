@@ -1,5 +1,6 @@
 ﻿using BibleTreasure.Models;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace BibleTreasure.Repository
 {
@@ -10,7 +11,7 @@ namespace BibleTreasure.Repository
         {
             this.treasureUrl = treasureUrl.Value;
         }
-        public async Task GetTodayTreasure()
+        public async Task<Treasures> GetTodayTreasure()
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage
@@ -25,9 +26,18 @@ namespace BibleTreasure.Repository
             };
             using (var response = await client.SendAsync(request))
             {
-                response.EnsureSuccessStatusCode();
-                var body = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(body);
+                if (response.IsSuccessStatusCode)
+                {
+                    var body = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<Treasures>(body);
+                }
+                else
+                {
+                    return new Treasures()
+                    {
+                        Results = new List<TreasureData>()
+                    };
+                }
             }
         }
     }
