@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
+    <!--facebook Share-->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0&appId=575826043820954&autoLogAppEvents=1" nonce="iCyV6zg4"></script>
+    @{
+        string Url = "https://localhost:44375/";
+    }
     <header id="header">
         <label style="color: white;">BibleTreasure</label>
         <nav>
@@ -42,10 +48,29 @@
                         }
                     </small>
                 </p>
-                <time>@DateTime.Now.DayOfWeek</time>
+                <small>
+                    <time>@DateTime.Now.DayOfWeek</time>
+                </small>
             </div>
         </div>
     }
+    <div>
+        <p class="lead text-light text-center pb-4">
+            Share with Friends
+        </p>
+        <div class="d-flex align-items-center justify-content-center">
+            
+            <!--Facebook share -->
+            <div class="fb-like" data-href="@Url" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
+            <!--Whatsapp share -->
+            <div>
+                <a href="https://api.whatsapp.com/send?text=@Url" data-action="share/whatsapp/share">
+                    <i class="fa-brands fa-whatsapp" id="whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
 
     <div class="container">
         <main role="main" class="pb-3">
