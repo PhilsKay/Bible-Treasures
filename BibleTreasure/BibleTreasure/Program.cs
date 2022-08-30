@@ -1,7 +1,12 @@
+using BibleTreasure.Models;
+using BibleTreasure.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ITreasure,TreasureService>();
+builder.Services.Configure<TreasureUrl>(builder.Configuration.GetSection("TreasureUrl"));
 
 var app = builder.Build();
 

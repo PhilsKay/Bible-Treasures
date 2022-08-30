@@ -2,3 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+var icon = document.getElementById("icon");
+icon.onclick = function () {
+    document.body.classList.toggle("white-theme");
+}
