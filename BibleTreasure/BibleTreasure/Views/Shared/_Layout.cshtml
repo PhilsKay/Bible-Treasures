@@ -8,6 +8,8 @@
     <title>@ViewData["Title"] Bible Treasure</title>
     <meta name="description" content="Bible Treasure of the day">
     <meta name="keywords" content="C#, ASP.NET core, HTML,CSS">
+    <meta name="author" content="PhilsKay">
+    <link rel="shortcut icon" href="~/hicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -55,19 +57,18 @@
         </div>
     }
     <div>
-        <p class="lead text-light text-center pb-4">
+        <p class="text-light text-center pb-4">
             Share with Friends
         </p>
-        <div class="d-flex  justify-content-center">
-            <div class="fb-like m-auto" data-href="@Url" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true">
+        <div class="d-flex align-items-center  justify-content-center">
+                 <!--Facebook share -->
+            <div class="fb-like px-2" data-href="@Url" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true">
             </div>
             <!--Whatsapp share -->
-            <div>
-                <a href="https://api.whatsapp.com/send?text=@Url" data-action="share/whatsapp/share">
+            <div class="pb-5 mb-3 px-3 me-0">
+                <a  href="https://api.whatsapp.com/send?text=@Url" data-action="share/whatsapp/share">
                     <i class="fa-brands fa-whatsapp" id="whatsapp"></i>
                 </a>
-                 <!--Facebook share -->
-            
             </div>
         </div>
 
@@ -80,7 +81,7 @@
     </div>
     <footer>
         <div id="footer">
-            &copy; Bible Treasure - Designed by PhilsKay
+            &copy; Bible Treasure - Designed by <a href="https://wa.me/message/TSXASQDEHJLUI1">PhilsKay</a>
         </div>
     </footer>
     <script src="/main.js"></script>

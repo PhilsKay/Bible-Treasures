@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sWyKaqQokFGf2MuhtBz3vUsibhhTMdPl16GXFlG9Elc=",
+  "Hash": "Ol8NeJKTiH1cIXKGZ6IkICOpPuXOkVj/j9ZkYz41gpU=",
   "Source": "BibleTreasure",
   "BasePath": "_content/BibleTreasure",
   "Mode": "Default",
@@ -68,12 +68,12 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\openSource\\Bible-Treasures\\BibleTreasure\\BibleTreasure\\wwwroot\\favicon.ico",
+      "Identity": "C:\\openSource\\Bible-Treasures\\BibleTreasure\\BibleTreasure\\wwwroot\\hicon.ico",
       "SourceId": "BibleTreasure",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\openSource\\Bible-Treasures\\BibleTreasure\\BibleTreasure\\wwwroot\\",
       "BasePath": "_content/BibleTreasure",
-      "RelativePath": "favicon.ico",
+      "RelativePath": "hicon.ico",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -82,7 +82,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\hicon.ico"
     },
     {
       "Identity": "C:\\openSource\\Bible-Treasures\\BibleTreasure\\BibleTreasure\\wwwroot\\js\\site.js",

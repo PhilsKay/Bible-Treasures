@@ -24,21 +24,32 @@ namespace BibleTreasure.Repository
         { "X-RapidAPI-Host", treasureUrl.Host },
     },
             };
-            using (var response = await client.SendAsync(request))
+            try
             {
-                if (response.IsSuccessStatusCode)
+                using (var response = await client.SendAsync(request))
                 {
-                    var body = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<Treasures>(body);
-                }
-                else
-                {
-                    return new Treasures()
+                    if (response.IsSuccessStatusCode)
                     {
-                        Results = new List<TreasureData>()
-                    };
+                        var body = await response.Content.ReadAsStringAsync();
+                        return JsonConvert.DeserializeObject<Treasures>(body);
+                    }
+                    else
+                    {
+                        return new Treasures()
+                        {
+                            Results = new List<TreasureData>()
+                        };
+                    }
                 }
             }
+            catch (System.AggregateException ag)
+            {
+                throw new Exception(ag.Message);    
+            }catch(HttpRequestException ht)
+            {
+                throw new Exception(ht.Message);
+            }
+            
         }
     }
 }
